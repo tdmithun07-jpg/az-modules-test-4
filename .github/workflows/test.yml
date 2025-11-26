@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      
+
 jobs:
   terraform:
     name: "Terraform"
@@ -22,10 +22,10 @@ jobs:
       - name: Terraform Init
         id: init
         run: terraform init
-        working-directory: ./Environments/Dev
+        # working-directory: ./Environments/Dev
 
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'push'
         run: terraform plan -no-color
-        working-directory: ./Environments/Dev
+        # working-directory: ./Environments/Dev
